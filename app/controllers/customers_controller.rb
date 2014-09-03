@@ -9,6 +9,11 @@ class CustomersController < ApplicationController
     #@customers = Customer.limit(100)
   end
 
+  def api01
+    @customers = Customer.desc(:age).limit(10)
+    render "api01", :formats => [:json], :handlers => [:jbuilder]
+  end
+
   # GET /customers/1
   # GET /customers/1.json
   def show

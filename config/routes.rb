@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   root 'top#index'
   get 'top/index'
 
-  resources :customers
+  resources :customers do
+    #member do
+    collection do
+      get :api01
+    end
+  end
 
   resources :users
 
